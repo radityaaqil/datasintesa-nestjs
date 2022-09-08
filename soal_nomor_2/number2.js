@@ -3,6 +3,7 @@ const countLetters = (str) => {
   let counts = [];
   let result = [];
 
+  //Insert to array of object each letter with each counts
   for (let i = 0; i < str.length - 1; i++) {
     let count = 0;
     for (let j = 0; j < str.length; j++) {
@@ -13,6 +14,7 @@ const countLetters = (str) => {
     counts.push({ counts: count, letter: str[i] });
   }
 
+  //Remove duplicate
   for (let i = 0; i < counts.length; i++) {
     let j;
     for (j = 0; j < i; j++) {
@@ -26,6 +28,7 @@ const countLetters = (str) => {
     }
   }
 
+  //Output string
   let output = '';
   for (let i = 0; i < result.length; i++) {
     output += `${result[i].letter}=${result[i].counts}`;
